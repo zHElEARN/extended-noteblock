@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "extended-noteblock",
+	"version": "${version}",
+	"name": "Extended Noteblock",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/extended-noteblock/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "com.zhelearn.mods.extendednoteblock.ExtendedNoteBlock"
+		],
+		"client": [
+			"com.zhelearn.mods.extendednoteblock.ExtendedNoteblockClient"
+		]
+	},
+	"mixins": [
+		"extended-noteblock.mixins.json",
+		{
+			"config": "extended-noteblock.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.6",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "extended-noteblock:block/high_note_block" }
+  }
+}
