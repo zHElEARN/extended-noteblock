@@ -43,14 +43,12 @@ public class HighNoteBlock extends net.minecraft.block.NoteBlock {
 
     @Override
     public boolean onSyncedBlockEvent(BlockState state, World world, BlockPos pos, int type, int data) {
-        if (!world.isClient) {
-            int notePitch = state.get(NOTE);
-            float pitch = (float) Math.pow(2.0D, (double) (notePitch - 12) / 12.0D);
+        int notePitch = state.get(NOTE);
+        float pitch = (float) Math.pow(2.0D, (double) (notePitch - 12) / 12.0D);
 
-            SoundEvent highNoteSoundEvent = Registries.SOUND_EVENT.get(new Identifier("extended-noteblock", "harp_fs6"));
+        SoundEvent highNoteSoundEvent = Registries.SOUND_EVENT.get(new Identifier("extended-noteblock", "harp_fs6"));
 
-            world.playSound(null, pos, highNoteSoundEvent, SoundCategory.RECORDS, 1.00F, pitch);
-        }
+        world.playSound(null, pos, highNoteSoundEvent, SoundCategory.RECORDS, 1.00F, pitch);
 
         return true;
     }
